@@ -12,6 +12,7 @@
   } from "./ui/form";
   import * as Card from "$lib/components/ui/card/index";
   import Button from "./ui/button/button.svelte";
+  import FormDescription from "./ui/form/form-description.svelte";
 
   const schema = z.object({
     animal: z.string().min(3).max(12),
@@ -53,7 +54,7 @@
 <div class="bg-gray-50 py-10 px-2">
   <Card.Root class="max-w-md mx-auto">
     <Card.Header>
-      <Card.Title>Animal Guessing game</Card.Title>
+      <Card.Title>Animal Quiz</Card.Title>
     </Card.Header>
     <Card.Content>
       {#if message}
@@ -66,6 +67,7 @@
               <FormLabel>Animal</FormLabel>
               <Input {...attrs} bind:value={$formData.animal} />
             </FormControl>
+            <FormDescription>Guess the cutest animal there is</FormDescription>
             <FormFieldErrors />
           </FormField>
           <FormButton>Guess</FormButton>
