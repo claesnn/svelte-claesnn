@@ -10,6 +10,7 @@
     FormLabel,
     FormField,
   } from "./ui/form";
+  import * as Card from "$lib/components/ui/card/index";
   import Button from "./ui/button/button.svelte";
 
   const schema = z.object({
@@ -49,18 +50,27 @@
   const { form: formData, enhance } = form;
 </script>
 
-{#if message}
-  <p>{message}</p>
-  <Button on:click={() => (message = "")}>Try again</Button>
-{:else}
-  <form method="POST" use:enhance>
-    <FormField {form} name="animal">
-      <FormControl let:attrs>
-        <FormLabel>Animal</FormLabel>
-        <Input {...attrs} bind:value={$formData.animal} />
-      </FormControl>
-      <FormFieldErrors />
-    </FormField>
-    <FormButton>Guess</FormButton>
-  </form>
-{/if}
+<div class="bg-gray-50 py-10 px-2">
+  <Card.Root class="max-w-md mx-auto">
+    <Card.Header>
+      <Card.Title>Animal Guessing game</Card.Title>
+    </Card.Header>
+    <Card.Content>
+      {#if message}
+        <p class="mb-3">{message}</p>
+        <Button on:click={() => (message = "")}>Try again</Button>
+      {:else}
+        <form method="POST" use:enhance>
+          <FormField {form} name="animal">
+            <FormControl let:attrs>
+              <FormLabel>Animal</FormLabel>
+              <Input {...attrs} bind:value={$formData.animal} />
+            </FormControl>
+            <FormFieldErrors />
+          </FormField>
+          <FormButton>Guess</FormButton>
+        </form>
+      {/if}
+    </Card.Content>
+  </Card.Root>
+</div>
