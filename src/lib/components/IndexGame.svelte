@@ -57,22 +57,21 @@
       <Card.Title>Animal Quiz</Card.Title>
     </Card.Header>
     <Card.Content>
-      {#if message}
+      <div class={!message ? "hidden" : ""}>
         <p class="mb-3">{message}</p>
         <Button on:click={() => (message = "")}>Try again</Button>
-      {:else}
-        <form method="POST" use:enhance>
-          <FormField {form} name="animal">
-            <FormControl let:attrs>
-              <FormLabel>Animal</FormLabel>
-              <Input {...attrs} bind:value={$formData.animal} />
-            </FormControl>
-            <FormDescription>Guess the cutest animal there is</FormDescription>
-            <FormFieldErrors />
-          </FormField>
-          <FormButton>Guess</FormButton>
-        </form>
-      {/if}
+      </div>
+      <form method="POST" use:enhance class={message ? "hidden" : ""}>
+        <FormField {form} name="animal">
+          <FormControl let:attrs>
+            <FormLabel>Animal</FormLabel>
+            <Input {...attrs} bind:value={$formData.animal} />
+          </FormControl>
+          <FormDescription>Guess the cutest animal there is</FormDescription>
+          <FormFieldErrors />
+        </FormField>
+        <FormButton>Guess</FormButton>
+      </form>
     </Card.Content>
   </Card.Root>
 </div>
