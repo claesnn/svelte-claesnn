@@ -19,7 +19,7 @@
 <IndexGame />
 
 <hr class="mt-10 mb-5" />
-<a href="/blog">
+<a href="/about">
   <h1 class="font-[Kurale] text-4xl mb-4">Biotech</h1>
 </a>
 
