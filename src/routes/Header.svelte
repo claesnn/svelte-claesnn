@@ -24,6 +24,8 @@
   ]
 
   let menuOpen = false
+
+  // disable scrolling when menu is open
   $: onMount(
     () => (document.body.style.overflow = menuOpen ? "hidden" : "auto"),
   )
@@ -37,9 +39,18 @@
   }
 </script>
 
+<!--
+  @component
+  ## Header
+
+  The header component is used to display the navigation links and the logo.
+  
+-->
+
 <header
-  class="flex justify-between px-4 py-2 place-items-center max-w-7xl mx-auto"
+  class="flex justify-between px-3 py-2 place-items-center max-w-7xl mx-auto"
 >
+  <!-- LOGO -->
   <a
     href="/"
     on:click={closeMenu}
@@ -47,6 +58,7 @@
     <h1 class="text-2xl font-bold font-[Oswald]">CLAESNN</h1>
   </a>
 
+  <!-- BURGER -->
   <button
     on:click={toggleMenu}
     class="sm:hidden"
@@ -58,6 +70,7 @@
     {/if}
   </button>
 
+  <!-- NAV -->
   <nav class="hidden sm:flex space-x-4">
     {#each links as link}
       <a
@@ -71,8 +84,11 @@
     {/each}
   </nav>
 </header>
+
+<!-- MOBILE NAV -->
 {#if menuOpen}
   <nav class="w-full z-10 fixed top-[50px] flex">
+    <!--CLICKABLE BACKGROUND-->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div
@@ -80,6 +96,7 @@
       on:click={closeMenu}
     ></div>
 
+    <!--MENU-->
     <aside class="w-[20rem] bg-white h-screen p-3 flex flex-col space-y-2">
       {#each links as link}
         <a

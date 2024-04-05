@@ -1,12 +1,12 @@
 <script>
   import "../app.pcss"
-  import Footer from "$lib/components/Footer.svelte"
-  import Header from "$lib/components/Header.svelte"
+  import Footer from "./Footer.svelte"
+  import Header from "./Header.svelte"
 </script>
 
 <div class="min-h-screen">
   <Header />
-  <div class="p-5 max-w-7xl mx-auto">
+  <div class="p-3 max-w-7xl mx-auto">
     <slot />
   </div>
 </div>

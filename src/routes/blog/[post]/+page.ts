@@ -1,3 +1,4 @@
+import { error } from "@sveltejs/kit"
 import type { PageLoad } from "./$types"
 
 interface BlogModule {
@@ -13,8 +14,8 @@ export const load: PageLoad = ({ params }) => {
 
   if (post in modules) {
     const { default: Component, metadata } = modules[post]
-    return { props: { Component, metadata } }
+    return { Component, metadata }
   } else {
-    return { status: 404 }
+    error(404, "Post not found")
   }
 }
