@@ -36,7 +36,7 @@
   }
 </script>
 
-<h1 class="font-[Kurale] text-7xl mb-8">Blogs</h1>
+<h1 class="font-[Kurale] text-7xl mb-8 mt-2">Blogs</h1>
 
 <!-- Display all posts -->
 <ul class="space-y-8 mb-10">

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import IndexGame from "./IndexGame.svelte";
-  import IndexIntro from "./IndexIntro.svelte";
-  import IndexPhotos from "./IndexPhotos.svelte";
+  import IndexGame from "./IndexGame.svelte"
+  import IndexIntro from "./IndexIntro.svelte"
+  import IndexPhotos from "./IndexPhotos.svelte"
 </script>
 
 <IndexIntro />
@@ -12,8 +12,21 @@
 </a>
 <IndexPhotos />
 
-<hr class="mt-5 mb-5" />
+<hr class="mt-10 mb-5" />
 <a href="/software">
   <h1 class="font-[Kurale] text-4xl mb-4">Software</h1>
 </a>
 <IndexGame />
+
+<hr class="mt-10 mb-5" />
+<a href="/blog">
+  <h1 class="font-[Kurale] text-4xl mb-4">Biotech</h1>
+</a>
+
+<a href="https://doi.org/10.1038/srep18016">
+  <img
+    src="/papers/0.png"
+    alt="Biotech"
+    class="max-w-4xl mx-auto mt-"
+  />
+</a>
