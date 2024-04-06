@@ -39,6 +39,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Blogs</title>
+</svelte:head>
+
 <div class="md:flex mt-5">
   <!-- Display all posts -->
   <ul class="space-y-8 mb-10 md:flex-grow">
