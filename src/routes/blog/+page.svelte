@@ -23,6 +23,10 @@
       ))
     : (posts = data.posts)
 
+  function resetSelected() {
+    selected = { label: "", value: "" }
+  }
+
   function formatDate(date: string) {
     return new Date(date).toLocaleDateString("en-US", {
       year: "numeric",
@@ -56,12 +60,12 @@
         <a href={`/blog/${post.post}`}>
           <!-- Post metadata -->
           <p>
-            <span class="text-blue-700 text-sm mr-2"
-              >{post.metadata.category.toUpperCase()}</span
-            >
-            <span class="text-sm"
-              >{formatDate(post.metadata.date).toUpperCase()}</span
-            >
+            <span class="text-blue-700 text-sm mr-2">
+              {post.metadata.category.toUpperCase()}
+            </span>
+            <span class="text-sm">
+              {formatDate(post.metadata.date).toUpperCase()}
+            </span>
           </p>
 
           <!-- Post title and description -->
@@ -105,9 +109,10 @@
       <Button
         class="mt-4 w-full"
         variant="secondary"
-        on:click={() => (selected = { label: "", value: "" })}
-        >Clear filter</Button
+        on:click={resetSelected}
       >
+        Clear filter
+      </Button>
     {/if}
   </div>
 </div>
