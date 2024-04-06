@@ -29,7 +29,9 @@
 <div class="max-w-4xl mx-auto">
   <a href="https://doi.org/10.1038/srep18016">
     <img
-      src="/papers/0.png"
+      src="/papers/0.webp"
+      width="790"
+      height="654"
       alt="Biotech"
       loading="lazy"
     />
