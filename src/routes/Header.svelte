@@ -62,6 +62,7 @@
   <button
     on:click={toggleMenu}
     class="sm:hidden"
+    aria-label="Toggle menu"
   >
     {#if menuOpen}
       <MenuClose />
