@@ -23,10 +23,12 @@
   <h1 class="font-[Kurale] text-4xl mb-4">Biotech</h1>
 </a>
 
-<a href="https://doi.org/10.1038/srep18016">
-  <img
-    src="/papers/0.png"
-    alt="Biotech"
-    class="max-w-4xl mx-auto mt-"
-  />
-</a>
+<div class="max-w-4xl mx-auto">
+  <a href="https://doi.org/10.1038/srep18016">
+    <img
+      src="/papers/0.png"
+      alt="Biotech"
+      loading="lazy"
+    />
+  </a>
+</div>
