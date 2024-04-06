@@ -105,7 +105,10 @@
           on:click={closeMenu}
           class:active={$page.url.pathname === link.route}
         >
-          <button class="text-lg">
+          <button
+            class="text-lg"
+            aria-label={link.name}
+          >
             {link.name}
           </button>
         </a>
