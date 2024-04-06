@@ -95,7 +95,10 @@
 
     <!-- Filter posts -->
     <Select.Root bind:selected>
-      <Select.Trigger class="w-full">
+      <Select.Trigger
+        class="w-full"
+        aria-label="Filter by category"
+      >
         <Select.Value placeholder="Category" />
       </Select.Trigger>
       <Select.Content>
