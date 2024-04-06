@@ -1,6 +1,7 @@
 <script lang="ts">
   import "./markdown.css"
   import type { PageData } from "./$types"
+  import PageHead from "$lib/components/PageHead.svelte"
   export let data: PageData
 
   function formatDate(date: string) {
@@ -11,6 +12,11 @@
     })
   }
 </script>
+
+<PageHead
+  title={data.metadata.title}
+  description={data.metadata.description}
+/>
 
 <!--Blog Header-->
 <div class="text-center w-full mb-12 mt-8">

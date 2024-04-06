@@ -1,7 +1,9 @@
 <script lang="ts">
   import Button from "$lib/components/ui/button/button.svelte"
   import * as Select from "$lib/components/ui/select"
+  import { ArrowDown, ArrowUp } from "svelte-radix"
   import type { PageData } from "./$types"
+  import PageHead from "$lib/components/PageHead.svelte"
   export let data: PageData
 
   let posts = data.posts
@@ -11,8 +13,10 @@
   }
   let ascending = false
 
+  // Sort posts by date
   $: sortPosts(ascending)
 
+  // Filter posts by category
   $: selected.value
     ? (posts = data.posts.filter(
         (post) => post.metadata.category === selected.value,
@@ -39,9 +43,10 @@
   }
 </script>
 
-<svelte:head>
-  <title>Blogs</title>
-</svelte:head>
+<PageHead
+  title="Blog"
+  description="Read about photography, web development, coffee, sports and more"
+/>
 
 <div class="md:flex mt-5">
   <!-- Display all posts -->
@@ -75,8 +80,14 @@
       class="w-full mb-5"
       variant="outline"
       on:click={() => (ascending = !ascending)}
-      >Sort by date {ascending ? "ascending" : "descending"}</Button
     >
+      <span class="mr-1">Sort by date</span>
+      {#if ascending}
+        <ArrowUp size="16" />
+      {:else}
+        <ArrowDown size="16" />
+      {/if}
+    </Button>
 
     <!-- Filter posts -->
     <Select.Root bind:selected>
@@ -93,6 +104,7 @@
     {#if selected.value}
       <Button
         class="mt-4 w-full"
+        variant="secondary"
         on:click={() => (selected = { label: "", value: "" })}
         >Clear filter</Button
       >

@@ -1,8 +1,11 @@
 <script lang="ts">
+  import PageHead from "$lib/components/PageHead.svelte"
   import IndexGame from "./IndexGame.svelte"
   import IndexIntro from "./IndexIntro.svelte"
   import IndexPhotos from "./IndexPhotos.svelte"
 </script>
+
+<PageHead />
 
 <IndexIntro />
 
